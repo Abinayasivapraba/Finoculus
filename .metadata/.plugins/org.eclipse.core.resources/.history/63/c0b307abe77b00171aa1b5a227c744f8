@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ViewGroup</title>
+</head>
+<body>
+<div ng-controller="GroupController as gtrl">
+
+<table class="table table-striped table-bordered table-hover table-checkable datatable"> 
+                 
+           
+            <thead class="grid-top-panel">  
+                <tr>  
+                    <th> GroupName</th>  
+                    <th>CreatorId</th>  
+                    <th>Group Date and Time</th> 
+                     
+                </tr>  
+            </thead>  
+            <tbody>    
+            <tr ng-repeat="group in groups">
+                    <td>{{group.groupname}}</td>  
+                    <td>{{group.creatorid}}</td>  
+                    <td>{{group.date}}</td>  
+                     <td><a ng-show="currentuser.id" href="#/addUsers" ng-click="gtrl.add()" class="btn btn-success">Add Users</a></td
+                </tr>  
+            </tbody> 
+            
+        </table> 
+        
+        <a ng-show="currentuser.id" href="#/addUsers" ng-click="gtrl.add()" class="btn btn-success">Add Users</a>
+         
+</div>
+
+
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>

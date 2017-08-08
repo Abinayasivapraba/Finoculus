@@ -1,0 +1,15 @@
+package com.abi.letzchatbe.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.springframework.stereotype.Component;
+@Entity
+@Component
+public class Group {
+	@Id
+	private String groupid;
+	private String creatorid;
+	private String groupname;
+
+}

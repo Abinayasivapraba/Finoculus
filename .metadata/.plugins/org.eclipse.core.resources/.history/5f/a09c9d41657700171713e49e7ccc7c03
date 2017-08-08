@@ -1,0 +1,15 @@
+package com.abi.letzchatbe.dao;
+
+import java.util.List;
+
+import com.abi.letzchatbe.model.User;
+
+public class UserDAO {
+	
+	public User getUserById(String userid);
+	
+	public List<User> list();
+	
+	
+
+}

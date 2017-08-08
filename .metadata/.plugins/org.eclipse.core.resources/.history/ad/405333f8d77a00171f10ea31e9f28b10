@@ -1,0 +1,51 @@
+package com.abi.letzchatbe.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.abi.letzchatbe.dao.UserDAO;
+import com.abi.letzchatbe.model.User;
+
+@Repository("userDAO")
+@EnableTransactionManagement
+
+public class UserDAOImpl implements UserDAO {
+	
+	private static final Logger log= LoggerFactory.getLogger(UserDAOImpl.class);
+	
+	private SessionFactory sessionFactory;
+	
+	public UserDAOImpl(SessionFactory sessionFactory){
+		this.sessionFactory=sessionFactory;	
+	}
+	@Transactional
+	public User getUserById(String userid) {
+		User user=(User) sessionFactory.getCurrentSession().get(User.class,userid);
+		return user;
+	}
+	@Transactional
+	public List<User> list() {
+		return sessionFactory.getCurrentSession().createQuery("from User").list();
+		 
+	}
+@Transactional
+	public boolean save(User user) {
+		try {
+			sessionFactory.getCurrentSession().save(user);
+			return true;
+		} catch (HibernateException e) {
+			
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+}

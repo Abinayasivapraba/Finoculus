@@ -1,0 +1,31 @@
+package com.abi.letzchatbe.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.abi.letzchatbe.dao.GroupDAO;
+import com.abi.letzchatbe.model.Group;
+import com.abi.letzchatbe.model.User;
+
+@RestController
+public class GroupRestController {
+	@Autowired
+	Group group;
+	@Autowired
+	GroupDAO groupDAO;
+	
+	
+	 
+		@GetMapping("/GroupList")
+		public ResponseEntity <List<Group>> listOfGroup()
+		{
+			List<Group> groupList=groupDAO.list();
+			return new ResponseEntity <List<Group>>(groupList,HttpStatus.OK);
+			
+		}
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang ="en" >
+<head>
+<meta charset="ISO-8859-1">
+<title>ChatApp</title>
+<script src="lib/angular.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> --> 
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBkqbP9nvwuTBHA4oDYfwhlKwOIO1JCX7o",
+    authDomain: "chatzone-3b14e.firebaseapp.com",
+    databaseURL: "https://chatzone-3b14e.firebaseio.com",
+    projectId: "chatzone-3b14e",
+    storageBucket: "",
+    messagingSenderId: "119104948205"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script> 
+<script src="js/app.js"></script>
+<!-- JQuery -->
+<script type="text/javascript" src="lib/JQuery/jquery.js"></script>
+
+<!-- Bootstrap -->
+<script src="lib/BootStrap/bootstrap.js"></script>
+<link rel="stylesheet" href="lib/BootStrap/bootstrap.min.css">
+
+<!-- AngularJS -->
+
+<script type="text/javascript" src="lib/angular-route.js"></script>
+<script type="text/javascript" src="lib/angular-cookies.js"></script>
+<script type="text/javascript" src="lib/angular-messages.js"></script>
+<script type="text/javascript" src="lib/angular-resource.js"></script>
+<script type="text/javascript" src="lib/angular-route.js"></script>
+
+<script type="text/javascript" src="lib/underscore.js"></script>
+<script type="text/javascript" src="lib/lodash.js"></script>
+<script type="text/javascript" src="lib/sockjs.js"></script>
+<script type="text/javascript" src="lib/stomp.js"></script>
+<script type="text/javascript" src="lib/upload.js"></script>
+<script type="text/javascript" src="lib/ng-file-upload.js"></script>
+<script type="text/javascript" src="lib/ng-file-upload-all.js"></script>
+
+
+
+</head>
+<body ng-app="chatApp" >
+<div ng-include="'Home/Header.html'"></div>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="Controller/UserController.js"></script>
+<script type="text/javascript" src="Controller/UserService.js"></script>
+<script type="text/javascript" src="Controller/ChatController.js"></script>
+<div ng-view></div>
+
+
+
+
+</body>
+</html>

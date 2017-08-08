@@ -1,0 +1,24 @@
+app.controller('UserController',[$http,UserService,$scope,$rootScope,$location
+     function($http,UserService,$scope,$rootScope,$location){
+	
+	
+	
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}])                            

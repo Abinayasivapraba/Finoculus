@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ChatApp</title>
+</head>
+<body>
+<div ng-controller="GroupController as gtrl">
+<div class="container">
+	<div class="row">
+<center><h1>Create your own group</h1></center>  
+
+   <div class="formcontainer">
+			<div class="row main">
+				<div class="main-login main-center">
+			
+					<form ng-submit="ctrl.create()" name="myForm" class="form-horizontal">
+					
+					
+					
+
+						
+						<div class="form-group">
+							
+							<div class="cols-sm-4">
+								<div class="input-group">
+									<
+									<input type="text" class="form-control" name="name" id="name" ng-model="ctrl.group.groupname"  placeholder="Enter your GroupName"/>
+								</div>
+							</div>
+						</div>
+						</form>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+					
+
+
+</body>
+</html>

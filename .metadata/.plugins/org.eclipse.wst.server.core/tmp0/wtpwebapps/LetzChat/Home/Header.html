@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div ng-controller="UserController as ctrl">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ChatZone</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#/home">Home</a></li>
+      <li ng-hide="currentuser.userid"><a href="#/login">Login</a></li>
+      
+      
+
+      <li><a href="#/goRegister">Register</a></li>
+      <li><a href="#/chat">Chat</a></li>
+      
+      
+      <li ><a href="#/createGroup">CreateGroup</a></li>
+      <li ng-show="currentuser.userid"><a href="#/" ng-click="ctrl.logout()">Welcome : {{currentuser.username}} | Logout</a></li>
+      
+      </ul>
+      </div>
+      </nav>
+      
+      
+      <div class="footer">
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">© 2017 - Abinaya@gmail.com </p>
+        </div>
+    </div>
+    </div>
+    </div>
+      
+ 
+
+</body>
+</html>

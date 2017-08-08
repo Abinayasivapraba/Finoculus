@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-controller="ChatController">
+<br>
+<div class="container">
+ <div class="panel panel-primary">
+  <div class="panel-heading">Chat Application</div>
+  <div class="panel-body">
+  <p ng-repeat=m in message>{{m.message}}</p>
+  
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="Your Message Here....">  
+  </div>
+  
+  </div>
+ 
+ 
+ 
+ </div>
+
+</body>
+</html>

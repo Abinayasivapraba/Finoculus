@@ -1,0 +1,5 @@
+package com.abi.letzchatbe.daoimpl;
+
+public class UserDAOImpl {
+
+}

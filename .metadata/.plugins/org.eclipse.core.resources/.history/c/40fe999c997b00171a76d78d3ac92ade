@@ -1,0 +1,25 @@
+package com.abi.letzchatbe.daoimpl;
+
+import java.util.List;
+
+import com.abi.letzchatbe.dao.GroupDAO;
+import com.abi.letzchatbe.model.Group;
+
+public class GroupDAOImpl implements GroupDAO {
+
+	public List<Group> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean save(Group group) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Group getGroupById(String groupid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

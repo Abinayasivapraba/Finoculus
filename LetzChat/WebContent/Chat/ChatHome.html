@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ChatApp</title>
+</head>
+<body>
+<body ng-controller="ChatController">
+<br>
+<div class="container">
+ <div class="panel panel-primary">
+  <div class="panel-heading">Chat Application</div>
+  <div class="panel-body">
+  <p ng-repeat="m in messages">{{m.message}} - {{m.date | date:'medium'}}</p>
+  
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="Your Message Here...." ng-model="messageText">  
+  </div>
+  <button type="submit" class="btn-btn-info" ng-click="send()" >Send</button>
+  </div>
+  </div>
+ 
+ 
+ 
+ 
+ </div>
+
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+com\abi\letzchatbe\model\User.class
+com\abi\letzchatbe\daoimpl\UserDAOImpl.class
+com\abi\letzchatbe\dao\UserDAO.class
+com\abi\letzchatbe\controller\UserRestController.class

@@ -1,0 +1,63 @@
+app.controller('UserController',['$http','UserService','$scope','$rootScope','$cookieStore','$location',
+     function($http,UserService,$scope,$rootScope,$cookieStore,$location){
+	    console.log("UserController...")
+	    this.user={
+	    	userid:'',
+	    	username:'',
+	    	password:'',
+	    	role:''
+	    }
+	    this.createUser=function(user)
+	    {
+	    console.log("creating a user");
+	    UserService.createUser(user)
+	    
+	    	.then(
+	    	function(d)
+	    	{
+	    	$location.path("/")	
+	    	},
+	    	function(errResponse){
+	    		console.log("Error while creating user")
+	    	}
+	    	);
+	    };
+	    this.submit=function(user) {
+	    {
+	    	console.log("User Created");
+	    	this.createUser(this.user);
+	    }
+	    this.reset();
+	    };
+	    this.reset=function(){
+	    	this.user={
+	    			userid:'',
+	    	    	username:'',
+	    	    	password:'',
+	    	    	role:''
+	    			
+	    	};
+	    	$scope.myForm.setPristine();
+	    };
+	
+	
+	   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}])                            

@@ -1,0 +1,5 @@
+package com.abi.letzchatbe.config;
+
+public class ApplicationContextConfig {
+
+}

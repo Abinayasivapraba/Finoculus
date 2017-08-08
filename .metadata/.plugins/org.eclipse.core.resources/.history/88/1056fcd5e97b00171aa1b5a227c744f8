@@ -1,0 +1,41 @@
+app.controller('GroupController',['$http','GroupService','$scope','$rootScope','$cookieStore','$location',
+     function($http,GroupService,$scope,$rootScope,$cookieStore,$location){
+	    console.log("GroupController...")
+	    this.group={
+	    	groupid:'',
+	    	groupname:'',
+	    	creatorid:'',
+	    	date:''
+	    }
+	    this.currentgroup={
+	    	groupid:'',
+	    	groupname:'',
+	    	creatorid:'',
+	    	date:''
+	    }
+	    this.createGroup=function(group)
+	    {
+	    console.log("creating a group");
+	    GroupService.createGroup(group)
+	    
+	    	.then(
+	    	function(d)
+	    	{
+	    	$location.path("/")	
+	    	},
+	    	function(errResponse){
+	    		console.log("Error while creating group")
+	    	}
+	    	);
+	    };
+	    this.create=function(group) {
+	    {
+	    	console.log("Group Created");
+	    	this.createGroup(this.group);
+	    }
+	    
+	    
+	    
+	    
+	    };
+}])

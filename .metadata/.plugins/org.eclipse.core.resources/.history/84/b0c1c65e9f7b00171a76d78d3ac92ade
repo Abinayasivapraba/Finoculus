@@ -1,0 +1,45 @@
+package com.abi.letzchatbe.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.abi.letzchatbe.dao.GroupDAO;
+import com.abi.letzchatbe.model.Group;
+@Repository("groupDAO")
+@EnableTransactionManagement
+public class GroupDAOImpl implements GroupDAO {
+private static final Logger log= LoggerFactory.getLogger(UserDAOImpl.class);
+	
+	private SessionFactory sessionFactory;
+	
+	public GroupDAOImpl(SessionFactory sessionFactory){
+		this.sessionFactory=sessionFactory;	
+	}
+
+	public List<Group> list() {
+		return sessionFactory.getCurrentSession().createQuery("from Group").list();
+	}
+
+	public boolean save(Group group) {
+		try {
+			sessionFactory.getCurrentSession().save(group);
+			return true;
+		} catch (HibernateException e) {
+			
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public Group getGroupById(String groupid) {
+		 Group  group=( Group) sessionFactory.getCurrentSession().get( Group.class,groupid);
+		return  group;
+	}
+
+}
