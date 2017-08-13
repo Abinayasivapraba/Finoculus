@@ -19,21 +19,37 @@ var BASE_URL='http://localhost:8085/LetzChatBE/'
 		
 		);
 	},
-  viewGroup: function(){
+  
+	
+    viewGroup: function(){
 	
 	console.log("ViewGroups Function Being Called")
-        return $http.get(BASE_URL+'GroupList')
+        return $http.get(BASE_URL+'/GroupList')
                 .then(
                         function(response){
                             return response.data;
                         }, 
                         function(errResponse){
-                            console.error('Error while fetching all blogs please try again');
+                            console.error('Error while fetching all groups please try again');
                             return $q.reject(errResponse);
                         }
                 );
 		},
-};
+	 viewGroupById: function(group){
+			
+			console.log("ViewGroups By UserId Function Being Called")
+		        return $http.get(BASE_URL+'/GroupById',group)
+		                .then(
+		                        function(response){
+		                            return response.data;
+		                        }, 
+		                        function(errResponse){
+		                            console.error('Error while fetching all groups please try again');
+		                            return $q.reject(errResponse);
+		                        }
+		                );
+				}
+}
 	
 	
 }])

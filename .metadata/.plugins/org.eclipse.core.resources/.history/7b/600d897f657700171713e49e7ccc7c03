@@ -1,5 +1,0 @@
-package com.abi.letzchatbe.dao;
-
-public interface UserDAO {
-
-}

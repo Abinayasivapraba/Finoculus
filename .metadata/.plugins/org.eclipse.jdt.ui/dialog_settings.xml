@@ -22,6 +22,8 @@
 		<item value="3" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item value="127" key="size.y"/>
+		<item value="322" key="size.x"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="528" key="DIALOG_WIDTH"/>

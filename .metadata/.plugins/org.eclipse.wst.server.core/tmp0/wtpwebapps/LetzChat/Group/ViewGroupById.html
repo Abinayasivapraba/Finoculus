@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ChatApp</title>
+</head>
+<body>
+<div ng-controller="GroupController as gtrl">
+<form ng-submit="gtrl.displayById()" method="post" name="GroupIdForm">
+<input type="text" ng-model="gtrl.group.groupid" name="id">
+<input type="submit" value="submit">
+</form>
+
+<div ng-controller="GroupController as gtrl">
+<table class="table-table-striped table-bordered table-hover table-checkable datatable">
+<thead class="grid-top-panel">
+<tr>
+<th>Group Name</th>
+<th>Creator Id</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{{group.groupname}}</td>
+<td>{{group.creatorid}}</td>
+<td>{{group.date}}</td>
+
+</tr>
+
+</tbody>
+
+
+
+</table>
+
+
+
+
+</div>
+
+
+
+</div>
+
+</body>
+</html>

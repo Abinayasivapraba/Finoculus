@@ -1,0 +1,17 @@
+package com.abi.letzchatbe.dao;
+
+import java.util.List;
+
+import com.abi.letzchatbe.model.Group;
+
+public interface GroupDAO {
+	
+	public List<Group> list();
+	
+	public boolean save(Group group);
+	
+	public Group getGroupById(int groupid);
+	
+	
+	
+}

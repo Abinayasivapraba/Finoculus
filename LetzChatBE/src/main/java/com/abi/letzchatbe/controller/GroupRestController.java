@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -74,6 +75,59 @@ public class GroupRestController {
 				newGroup.setErrormessage("Group Does Not Posted Successfully Please Try Again");
 				return new ResponseEntity<Group>(newGroup, HttpStatus.OK);
 			}
+		}
+		
+		@PostMapping("/GroupById{groupid}")
+		public ResponseEntity<Group> listGroupById(@PathVariable("groupid") String groupid)
+		{
+			System.out.println(groupid);
+			log.debug("Starting of the method listGroupById");
+			int bid=Integer.parseInt(groupid);
+			group=groupDAO.getGroupById(bid);
+			if(group==null)
+			{
+				log.debug("Starting of the method group is null or not");
+				group=new Group();
+				group.setErrorcode("404");
+				group.setErrormessage("No such Group Exists");
+				return new ResponseEntity<Group>(group,HttpStatus.OK);
+			}
+			else
+			{
+				group.setErrorcode("200");
+				group.setErrormessage(" Group Exists and fetched by Id Successfully");
+				return new ResponseEntity<Group>(group,HttpStatus.OK);
+			}
+		}
+		
+		@GetMapping("/GroupByUserId{userid}")
+		
+			public ResponseEntity<List<Group>> listGroupByUserId()
+			{
+			log.debug("Starting of the method show Group by UserId");
+			String loggedInUserId=(String) session.getAttribute("userLoggedIn");
+			List<Group> groupList=groupDAO.listGroupById(loggedInUserId);
+			if(loggedInUserId==null){
+				log.debug("Checking whether the User Is Logged In Or Not");
+				group.setErrorcode("400");
+				group.setErrormessage("Login of User required..Please Login with your Id..");
+				return new ResponseEntity<List<Group>>(groupList, HttpStatus.OK);
+			}
+			if(groupList==null)
+			{
+				log.debug("Checking of the User Group List");
+				group.setErrorcode("400");
+				group.setErrormessage("No Groups..You have not created any groups");
+				return new ResponseEntity<List<Group>>(groupList, HttpStatus.OK);
+			}
+			else
+			{
+				log.debug("Starting of the  result method show Group by UserId");
+				group.setErrorcode("200");
+				group.setErrormessage(" Group Exists and fetched by UserId Successfully");
+				return new ResponseEntity<List<Group>>(groupList, HttpStatus.OK);
+			}
+			
 		}
 		
 }

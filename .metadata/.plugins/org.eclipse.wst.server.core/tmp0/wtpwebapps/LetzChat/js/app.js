@@ -2,7 +2,10 @@ var app = angular.module('chatApp',['ngRoute','ngCookies','firebase']);
 app.config(function($routeProvider) {
 	$routeProvider
 	.when('/home', {
-		templateUrl : 'Header/Home.html'	
+		templateUrl : 'Home/Home.html'	
+	})
+	.when('/chatZone', {
+		templateUrl : 'Home/Home.html'	
 	})
 	.when('/goRegister', {
 		templateUrl : 'User/Reg.html',
@@ -22,6 +25,10 @@ app.config(function($routeProvider) {
 	})
 	.when('/viewGroup', {
 		templateUrl : 'Group/ViewGroup.html',
+		controller : 'GroupController'
+	})
+	.when('/viewGroupById', {
+		templateUrl : 'Group/ViewGroupById.html',
 		controller : 'GroupController'
 	})
 	.otherwise({

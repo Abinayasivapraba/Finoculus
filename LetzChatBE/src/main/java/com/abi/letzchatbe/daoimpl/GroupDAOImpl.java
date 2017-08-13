@@ -47,5 +47,8 @@ private static final Logger log= LoggerFactory.getLogger(UserDAOImpl.class);
 		 Group  group=( Group) sessionFactory.getCurrentSession().get( Group.class,groupid);
 		return  group;
 	}
+	public List<Group> listGroupById(String userid) {
+		return sessionFactory.getCurrentSession().createQuery("from Group where userid='"+userid+"'").list();
+	}
 
 }

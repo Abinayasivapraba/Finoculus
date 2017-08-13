@@ -12,6 +12,7 @@ public interface GroupDAO {
 	
 	public Group getGroupById(int groupid);
 	
+	public List<Group> listGroupById(String userid);	
 	
 	
 }
